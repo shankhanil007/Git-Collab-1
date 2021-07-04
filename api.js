@@ -7,13 +7,13 @@ form.addEventListener('submit', async function (e) {
     const today = new Date();
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     const list2 = document.createElement("li")
-    list1.value = res.data.ticker.price;
-    list2.value = time;
+    list1.appendChild(document.createTextNode(res.data.ticker.price));
+    list2.appendChild(document.createTextNode(time));
 
-    list.appendChild(list1)
-    list.appendChild(list2);
+    list.append(list1);
+    list.append(list2);
     document.body.append(list);
-    console.log(list1.value);
-    console.log(time);
-    console.dir(list1);
+    //console.log(list1.value);
+    //console.log(time);
+    //console.dir(list1);
 })
